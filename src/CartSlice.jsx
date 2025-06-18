@@ -1,12 +1,13 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+
 export const CartSlice = createSlice({
   name: 'cart',
   initialState: {
     items: [], // Initialize items as an empty array
   },
   reducers: {
-    addItem: (state, action) => {
+addItem: (state, action) => {
   const { name, image, cost } = action.payload; // Destructure product details from the action payload
   // Check if the item already exists in the cart by comparing names
   const existingItem = state.items.find(item => item.name === name);
